@@ -1,0 +1,57 @@
+#! /bin/sh
+
+
+usage()
+{
+    echo "run command \"checkque --que<number>\" for checking que<number>"
+    echo "run command \"checkque --que1\" to run file que1.cpp"
+    echo "run command \"checkque --clean\" to remove all the executable files"
+    echo "Thanks"
+    exit $1
+}
+
+while test $# -gt 0; do
+    case $1 in
+    --help)
+        usage 0
+        ;;
+    --que1)
+        g++ -o que1 que1.cpp
+        ./que1
+        ;;
+    --que2)
+        g++ -o que2 que2.cpp
+        ./que2
+        ;;
+    --que3)
+        g++ -o que3 que3.cpp
+        ./que3
+        ;;
+    --que4)
+        g++ -o que4 que4.cpp
+        ./que4
+        ;;
+    --que5)
+        g++ -o que5 que5.cpp
+        ./que5
+        ;;
+    --que6a)
+        g++ -o que6a que6a.cpp
+        ./que6a
+        ;;
+    --que6b)
+        g++ -o que6b que6b.cpp
+        ./que6b
+        ;;
+    --clean)
+        rm que1 que2 que3 que4 que5 que6a que6b 2>/dev/null
+        ;;
+    *)
+        usage 1
+        ;;
+
+    esac
+
+    shift
+done
+    
