@@ -25,12 +25,12 @@ int partition(int arr[], int l, int r)
     int s=l;
     for(int i=l;i<r;i++)
     {
-        if(arr[i]<arr[r]){
-            swap(arr[i],arr[s]);
+        if(arr[i]<arr[r]){                      /*  If the current element is smaller then pivot element    */
+            swap(arr[i],arr[s]);                /*  swap it with the previous element that is greater then pivot element    */
             s++;
         }
     }
-    swap(arr[s],arr[r]);
+    swap(arr[s],arr[r]);                        /*  Swap piovt element with the left most element that is greater then pivot    */
     return s;
 }
 
@@ -40,7 +40,7 @@ int32_t main()
     int ans=0;int l=0; int r=n-1;
     // keep pivoting random elements until 
     // we get element at index n/2
-    while(true)
+    while(true)                                 /*  Find element at index n/2   */
     {
         int a = partition(arr, l, r);
         if(a==n/2){
@@ -49,7 +49,7 @@ int32_t main()
         if(a>n/2) r=a-1;
         if(a<n/2) l=a+1;
     }
-    if(!(n&1))
+    if(!(n&1))                                  /*  If length of array is even, find element at index n/2-1 */
     {
         l=0;r=n-1;
         // keep pivoting random elements until 
@@ -64,7 +64,7 @@ int32_t main()
             if(a<n/2-1) l=a+1;
         }   
 
-        ans*=5;
+        ans*=5;                                 /*  If length of array is even, add two middle elements and take their average*/
         cout<<ans/10;
         if(ans&1) cout<<".5";
         cout<<endl;

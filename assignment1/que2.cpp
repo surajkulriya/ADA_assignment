@@ -56,3 +56,9 @@ int main()
     build(arr,0,0,n-1);                                         /*  Build the tree in n stpes*/
     cout<<"min element = "<<tree[0].first<<" second min = "<<secondmin(0,0,n-1,100000)<<endl;
 }
+
+/*  
+    Total stpes needed = n + log(n) 
+    n steps for computing min element and building the tree
+    and log n steps for traversing the tree with log(n) height.
+*/

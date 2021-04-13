@@ -18,30 +18,37 @@ while test $# -gt 0; do
     --que1)
         g++ -o que1 que1.cpp
         ./que1
+        rm que1
         ;;
     --que2)
         g++ -o que2 que2.cpp
         ./que2
+        rm que2
         ;;
     --que3)
         g++ -o que3 que3.cpp
         ./que3
+        rm que3
         ;;
     --que4)
         g++ -o que4 que4.cpp
         ./que4
+        rm que4
         ;;
     --que5)
         g++ -o que5 que5.cpp
         ./que5
+        rm que5
         ;;
     --que6a)
         g++ -o que6a que6a.cpp
         ./que6a
+        rm que6a
         ;;
     --que6b)
         g++ -o que6b que6b.cpp
         ./que6b
+        rm que6b
         ;;
     --clean)
         rm que1 que2 que3 que4 que5 que6a que6b 2>/dev/null

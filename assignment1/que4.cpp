@@ -22,8 +22,8 @@ int partition(int arr[], int l, int r)
 {
     int s=l;
     for(int i=l;i<r;i++){
-        if(arr[i]<arr[r]) swap(arr[i],arr[s++]);
-    }
+        if(arr[i]<arr[r]) swap(arr[i],arr[s++]);        /*  If the current element is smaller then pivot element    */
+    }                                                   /*  swap it with the previous element that is greater then pivot element    */
     swap(arr[r],arr[s]);
     return s;
 }
@@ -31,10 +31,10 @@ int partition(int arr[], int l, int r)
 // sort array starting from index l to r(inclusive) 
 void quickSort(int arr[], int l, int r)
 {
-    if(l>=r) return;
+    if(l>=r) return;                                    /*  If we got left index > right index, we are there*/
     int a=partition(arr, l, r);
-    quickSort(arr,l,a-1);
-    quickSort(arr, a+1, r);
+    quickSort(arr,l,a-1);                               /*  recursively sort array at left of pivot element */
+    quickSort(arr, a+1, r);                             /*  recursively sort array at right of pivot element    */
 }
 
 int32_t main()
